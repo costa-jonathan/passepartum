@@ -5,11 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
         let username = ''
         let password = ''
         console.log(username, password)
-        chrome.storage.local.set({ 'moodle_key': { "username": username, "password": password } }, function() {
-            if (chrome.runtime.error) {
+        browser.storage.local.set({ 'moodle_key': { "username": username, "password": password } }, function() {
+            if (browser.runtime.lastError) {
                 console.error("An error with local storage was found. If this presists please contact us.");
             }
         });
+
         location.reload() // reloading so one can see a successful input
     }
 })

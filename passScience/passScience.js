@@ -4,8 +4,8 @@ const url = location.href.replace('https://www.science.org', '') // cut the fron
     .replace('/', '%2F') // encode
 
 // check if paper even available if already logged in
-if ((document.querySelector("#mainNavbar > div > div > div.col.justify-content-end.d-flex.p-0.header-row__item > ul > li:nth-child(1) > div > div > div.institution__content > span.institution__name"))
-    && (document.querySelector("#frontmatter > header > div > div.info-panel > div.info-panel__right-items-wrapper > div.info-panel__formats.info-panel__item > a > span").textContent === 'get access')) {
+if ((document.querySelector("#mainNavbar > div > div > div.col.justify-content-end.d-flex.p-0.header-row__item > ul > li:nth-child(1) > div > div > div.institution__content > span.institution__name")) &&
+    (document.querySelector("#frontmatter > header > div > div.info-panel > div.info-panel__right-items-wrapper > div.info-panel__formats.info-panel__item > a > span").textContent === 'get access')) {
     // if already logged in and paper not available add a login button which alerts the user that not available
     document.querySelector("#frontmatter > header > div > div.info-panel > div.info-panel__right-items-wrapper")
         .insertAdjacentHTML('beforeend', "<div class='info-panel__formats info-panel__item'>" +
@@ -20,4 +20,4 @@ if ((document.querySelector("#mainNavbar > div > div > div.col.justify-content-e
 }
 
 // inject passepartum icon
-document.getElementById('logo').src = chrome.runtime.getURL("icons/icons8-key-blue.svg")
+document.getElementById('logo').src = browser.runtime.getURL("icons/icons8-key-blue.svg")

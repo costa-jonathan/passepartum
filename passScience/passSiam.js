@@ -1,7 +1,7 @@
 // construct login url with redirect to current page
-const url = "http://iam.atypon.com/action/ssostart?idp=https%3A%2F%2Ftumidp.lrz.de%2Fidp%2Fshibboleth&redirectUri="
-    + location.href.replace('/', '%2F').replace('doi', 'doi/epdf')
-    + "&federationId=http%3A%2F%2Fukfederation.org.uk&targetSP=https%3A%2F%2Fepubs.siam.org&requesterId=https%3A%2F%2Fepubs.siam.org%2Fshibboleth"
+const url = "http://iam.atypon.com/action/ssostart?idp=https%3A%2F%2Ftumidp.lrz.de%2Fidp%2Fshibboleth&redirectUri=" +
+    location.href.replace('/', '%2F').replace('doi', 'doi/epdf') +
+    "&federationId=http%3A%2F%2Fukfederation.org.uk&targetSP=https%3A%2F%2Fepubs.siam.org&requesterId=https%3A%2F%2Fepubs.siam.org%2Fshibboleth"
 
 // inject login button with constructed url matching the login options of the page
 try {
@@ -13,8 +13,8 @@ try {
             "                </a>" +
             "            </li>"
         );
-        // inject passepartum icon
-        document.getElementById('logo').src = chrome.runtime.getURL("icons/icons8-key-white.svg")
+    // inject passepartum icon
+    document.getElementById('logo').src = browser.runtime.getURL("icons/icons8-key-white.svg")
 } catch (e) {
     console.warn('trying to insert again in 2 seconds')
 }
@@ -32,7 +32,7 @@ setTimeout(function() {
                 "            </li>"
             );
         // inject passepartum icon
-        document.getElementById('logo').src = chrome.runtime.getURL("icons/icons8-key-white.svg")
+        document.getElementById('logo').src = browser.runtime.getURL("icons/icons8-key-white.svg")
     } catch (e) {
         console.warn('trying to insert again in 3 seconds')
         setTimeout(function() {
@@ -45,10 +45,7 @@ setTimeout(function() {
                     "            </li>"
                 );
             // inject passepartum icon
-            document.getElementById('logo').src = chrome.runtime.getURL("icons/icons8-key-white.svg")
+            document.getElementById('logo').src = browser.runtime.getURL("icons/icons8-key-white.svg")
         }, (3500));
     }
 }, (1500));
-
-
-

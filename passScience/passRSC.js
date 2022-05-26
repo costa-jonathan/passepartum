@@ -1,6 +1,6 @@
 // construct login url with redirect to current page
-const url = 'https://www.rsc.org/rsc-id/account/checkfederatedaccess?instituteurl=https%3A%2F%2Ftumidp.lrz.de%2Fidp%2Fshibboleth&returnurl='
-    + location.href.replace('/', '%2F').replace(':', '%3A') // encode
+const url = 'https://www.rsc.org/rsc-id/account/checkfederatedaccess?instituteurl=https%3A%2F%2Ftumidp.lrz.de%2Fidp%2Fshibboleth&returnurl=' +
+    location.href.replace('/', '%2F').replace(':', '%3A') // encode
 
 // timeout necessary because the div to insert it gets updated shortly after page load
 setTimeout(function() {
@@ -13,5 +13,5 @@ setTimeout(function() {
             "            </a>");
 
     // inject passepartum icon
-    document.getElementById('logo').src = chrome.runtime.getURL("icons/icons8-key-white.svg")
+    document.getElementById('logo').src = browser.runtime.getURL("icons/icons8-key-white.svg")
 }, (1000));

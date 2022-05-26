@@ -1,6 +1,6 @@
-const url = "http://iam.atypon.com/action/ssostart?idp=https%3A%2F%2Ftumidp.lrz.de%2Fidp%2Fshibboleth&redirectUri="
-    + location.href.replace('/', '%2F').replace(':', '%3A').replace('abs', 'epdf')
-    + "&federationId=http%3A%2F%2Fukfederation.org.uk&targetSP=https%3A%2F%2Fpubsonline.informs.org&requesterId=https%3A%2F%2Fpubsonline.informs.org%2Fshibboleth"
+const url = "http://iam.atypon.com/action/ssostart?idp=https%3A%2F%2Ftumidp.lrz.de%2Fidp%2Fshibboleth&redirectUri=" +
+    location.href.replace('/', '%2F').replace(':', '%3A').replace('abs', 'epdf') +
+    "&federationId=http%3A%2F%2Fukfederation.org.uk&targetSP=https%3A%2F%2Fpubsonline.informs.org&requesterId=https%3A%2F%2Fpubsonline.informs.org%2Fshibboleth"
 
 
 // inject login button with constructed url matching the login options of the page
@@ -10,8 +10,8 @@ document.querySelector("#pb-page-content > div > main > article > div > div.col-
         "<img id='logo' alt='passepartum-logo' width='27' height='27' style=\"margin-top: -5px\">" +
         "<div style='margin-left: 5px'>Passepartum</div></a></div>"
     )
-// inject passepartum icon
-document.getElementById('logo').src = chrome.runtime.getURL("icons/icons8-key-white.svg")
+    // inject passepartum icon
+document.getElementById('logo').src = browser.runtime.getURL("icons/icons8-key-white.svg")
 
 
 // second on in the header - cannot get the spacing right - for now without - maybe implement later
@@ -23,4 +23,4 @@ document.getElementById('logo').src = chrome.runtime.getURL("icons/icons8-key-wh
 //         "</div>"
 //     )
 // inject passepartum icon
-// document.getElementById('logo2').src = chrome.runtime.getURL("icons/icons8-key-blue.svg")
+// document.getElementById('logo2').src = browser.runtime.getURL("icons/icons8-key-blue.svg")

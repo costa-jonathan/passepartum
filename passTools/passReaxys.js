@@ -5,7 +5,7 @@ document.querySelector('#site-navigation > ul')
         'class="new-menu-link"><img style="margin-top: -13px;" id=\'logo\' alt=\'passepartum-logo\' width=\'32\'></a></li>')
 
 // inject passepartum icon
-document.getElementById('logo').src = chrome.runtime.getURL("icons/icons8-key-blue.svg")
+document.getElementById('logo').src = browser.runtime.getURL("icons/icons8-key-blue.svg")
 
 // add event listener to the button added that runs "pass" function when pressed
 document.getElementById("passepartum").addEventListener("click", pass);
@@ -26,14 +26,14 @@ function pass() {
     setTimeout(function() {
         let i = 10 // just for speed reasons start at the 11th
         while (true) {
-            let university = document.querySelector('#main-content > div > div > div > div.login-page-form-wrapper > div.els-select-wrapper.dropdown.open > div > ul > li:nth-child('+i+') > a > span').textContent
+            let university = document.querySelector('#main-content > div > div > div > div.login-page-form-wrapper > div.els-select-wrapper.dropdown.open > div > ul > li:nth-child(' + i + ') > a > span').textContent
             if (university === 'German Higher Education & Research (DFN-AAI)') {
                 break
             } else {
-                i ++
+                i++
             }
         }
-        document.querySelector('#main-content > div > div > div > div.login-page-form-wrapper > div.els-select-wrapper.dropdown.open > div > ul > li:nth-child('+i+') > a').click()
+        document.querySelector('#main-content > div > div > div > div.login-page-form-wrapper > div.els-select-wrapper.dropdown.open > div > ul > li:nth-child(' + i + ') > a').click()
     }, (3.5 * 1000));
 
     // open the dropdown menu to "Select your institution"
@@ -49,14 +49,14 @@ function pass() {
     setTimeout(function() {
         let i = 10 // just for speed reasons start at the 11th
         while (true) {
-            let university = document.querySelector('#main-content > div > div > div > div.login-page-form-wrapper > div.els-select-wrapper.dropdown.open > div > ul > li:nth-child('+i+') > a > span').textContent
+            let university = document.querySelector('#main-content > div > div > div > div.login-page-form-wrapper > div.els-select-wrapper.dropdown.open > div > ul > li:nth-child(' + i + ') > a > span').textContent
             if (university === 'Technische Universität München (TUM)') {
                 break
             } else {
-                i ++
+                i++
             }
         }
-        document.querySelector('#main-content > div > div > div > div.login-page-form-wrapper > div.els-select-wrapper.dropdown.open > div > ul > li:nth-child('+i+') > a').click()
+        document.querySelector('#main-content > div > div > div > div.login-page-form-wrapper > div.els-select-wrapper.dropdown.open > div > ul > li:nth-child(' + i + ') > a').click()
     }, (5.5 * 1000));
 
     // finally click the "go" button
