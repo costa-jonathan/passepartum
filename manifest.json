@@ -1,5 +1,5 @@
 {
-    "name": "passepartum",
+    "name": "passepargame",
     "version": "1.2.0",
     "manifest_version": 2,
     "description": "The extension automates the login process for the services of Technical University of Munich (TUM; eg. moodle, mail LaTeX).",
